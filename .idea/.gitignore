@@ -4,3 +4,5 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+/dictionaries/20961.xml
+/encodings.xml
