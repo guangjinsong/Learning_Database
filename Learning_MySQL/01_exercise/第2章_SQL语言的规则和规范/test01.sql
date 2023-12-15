@@ -2,3 +2,5 @@
 use atguigudb;
 
 show tables;
+
+SHOW ENGINES
