@@ -178,7 +178,10 @@ FROM employees;
 ![image-20231225173609060](https://dawn1314.oss-cn-beijing.aliyuncs.com/typoraimg/202312251736119.png) 
 
 * ELECT 查询还可以对常数进行查询。对的，就是在 SELECT 查询结果中增加一列固定的常数列。这列的取值是我们指定的，而不是从数据表中动态取出的
-* SQL 中的 SELECT 语法的确提供了这个功能，一般来说我们只从一个表中查询数据，通常不需要增加一个固定的常数列，但如果我们想整合不同的数据源，用常数列作为这个表的标记，就需要查询常数。
+
+* SQL 中的 SELECT 语法的确提供了这个功能，一般来说我们只从一个表中查询数据，通常不需要增加一个固定的常数列，但如果我们想整合不同的数据源，用常数列作为这个表的标记，就需要查询常数
+
+  
 
 # 9.  `DESC`: 显示表结构
 
@@ -197,3 +200,31 @@ DESC employees;
 * `MUL`: 表示在列中某个给定值允许出现多次
 * `Default`：表示该列是否有默认值，如果有，那么值是多少
 * `Extra`：表示可以获取的与给定列有关的附加信息，例如AUTO_INCREMENT等
+
+
+
+# 10. 过滤数据
+
+* **语法**
+
+  ```sql
+  SELECT 字段1,字段2
+  FROM 表名
+  WHERE 过滤条件
+  ```
+
+  * 使用WHERE子句，将不满足条件的行过滤掉
+  * WHERE子句紧随FROM子句
+
+* **示例**
+
+  * **查询90号部门的员工信息**
+
+    ![image-20231226163841657](https://dawn1314.oss-cn-beijing.aliyuncs.com/typoraimg/202312261638720.png)
+
+  * **查询last_name为King的员工**
+
+    ![image-20231226163953344](https://dawn1314.oss-cn-beijing.aliyuncs.com/typoraimg/202312261639384.png)
+
+    *  在Windows下不区分大小写一般是指出了""或''之外的内容, 但是Windows下的MySQL对`" "`或`' '`之内的内容也不区分大小写,  但是Oracle区分, Oracle下,字符串只能用`' '`表示, 不能用`" "`
+
