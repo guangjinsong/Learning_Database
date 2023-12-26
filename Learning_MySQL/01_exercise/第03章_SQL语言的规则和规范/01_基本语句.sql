@@ -49,3 +49,20 @@ FROM employees;
 # 显示表结构
 DESC employees;
 
+
+# where: 过滤数据
+# 声明要在from后面
+# 1. 查询90号部门的员工信息
+SELECT *
+FROM employees
+WHERE department_id = 90;
+
+# 2. 查询last_name为King的员工
+# 在Windows下不区分大小写一般是指出了""或''之外的内容
+# 但是Windows下的MySQL对""或''之内的内容也不区分大小写,
+# 但是Oracle区分, Oracle下,字符串只能用''表示, 不能用""
+# 表示
+SELECT *
+FROM employees
+WHERE last_name = 'king';
+
