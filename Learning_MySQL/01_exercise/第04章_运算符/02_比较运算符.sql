@@ -82,3 +82,42 @@ WHERE department_id IN (10,20,30);
 SELECT last_name,salary,department_id
 FROM employees
 WHERE salary NOT IN (6000,7000,8000);
+
+# 2.4 like: 模糊查询
+# %: 表示不确定个数的字符(0个,1个, 或多个)
+
+# 练习: 查询last_name中包含字符'a'的员工信息
+SELECT last_name
+FROM employees
+WHERE last_name LIKE '%a%';
+
+# 练习: 查询last_name中以字符'a'开头的员工信息
+SELECT last_name
+FROM employees
+WHERE last_name LIKE 'a%';
+
+# 练习: 查询last_name中包含字符'a'且包含字符'e'员工信息
+SELECT last_name
+FROM employees
+# WHERE last_name LIKE '%a%' AND last_name LIKE '%e%';
+WHERE last_name LIKE '%a%e%' or last_name LIKE '%e%a%';
+
+# _: 表示一个不确定的字符
+# 练习: 查询第二个字符是'a'的员工信息
+SELECT last_name
+FROM employees
+WHERE last_name LIKE '__a%';
+
+# 转义字符: \
+# 练习: 查询第2个字符是_, 且第三个字符是'a'的员工信息
+SELECT last_name
+FROM employees
+WHERE last_name LIKE '_\_a%';
+
+# 2.6 正则表达式
+# REGEXP \ RLIKE
+SELECT 'shkstart' REGEXP '^shk', 'shkstart' REGEXP 't$', 'shkstart' REGEXP 'hk'
+FROM DUAL;
+
+SELECT 'atguigu' REGEXP 'gu.gu','atguigu' REGEXP '[ab]'
+FROM DUAL;
