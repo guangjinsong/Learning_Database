@@ -7,3 +7,9 @@
 # 2. 将输出结果内嵌在编辑器中
 
 ![](https://dawn1314.oss-cn-beijing.aliyuncs.com/typoraimg/202312251547852.png)
+
+
+
+# 3. 快捷键
+
+1. `alt v`: 重命名
